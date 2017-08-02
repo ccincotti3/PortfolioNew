@@ -1,0 +1,70 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.splash-title h1, .splash-title h2 {
+  background-color: #3939ef;
+  font-size: 7em;
+  font-weight: 800;
+  margin: 0;
+}
+
+.splash {
+    text-align: center;
+    background-color: #3939ef;
+    color: white;
+    height: 80vh
+}
+
+.fa {
+  font-size: 50px;
+  color: #3939ef;
+  margin: 20px;
+}
+
+.image-cropper {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    outline: none;
+}
+
+.index-buttons {
+  display: flex;
+  justify-content:center;
+}
+
+.index-button button {
+  margin: 30px;
+  filter: grayscale(100);
+  transition: filter .2s ease-in;
+}
+
+.index-button button:hover {
+  filter: grayscale(0);
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    outline: none;
+}
+
+img#hotdog {
+  position:relative;
+  right: 45px;
+}
+
+img#headshot {
+  position:relative;
+  right: 5px;
+}
+
+footer {
+  text-align: center;
+  color: #3939ef;
+}
