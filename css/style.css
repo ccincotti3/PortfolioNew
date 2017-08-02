@@ -9,11 +9,48 @@ body {
   margin: 0;
 }
 
-.splash {
+@keyframes makeVisible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes MoveUpDown {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 5px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+
+.splash-title, .eater-splash-title {
+  animation: 1s ease-out 0s 1 makeVisible;
+}
+
+.splash, .eater-splash {
     text-align: center;
     background-color: #3939ef;
     color: white;
-    height: 80vh
+    height: 80vh;
 }
 
 .fa {
@@ -32,18 +69,50 @@ body {
 }
 
 .index-buttons {
+  opacity: 0;
   display: flex;
   justify-content:center;
+}
+
+.slideInFromBottom {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+  -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.upAndDown {
+  animation: MoveUpDown 4s ease-out infinite;
 }
 
 .index-button button {
   margin: 30px;
   filter: grayscale(100);
-  transition: filter .2s ease-in;
+  box-shadow: none;
+  transition: all .2s ease-in;
 }
 
 .index-button button:hover {
   filter: grayscale(0);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.eater-splash {
+  display: none;
+  background-image:
+  linear-gradient( rgba(57,148,239,.5), rgba(57,148,239,.5) ),
+  url('trophy.JPG');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.eater-splash-title h1 {
+  font-size: 7em;
+  font-weight: 800;
+  margin: 0;
 }
 
 img {
@@ -67,4 +136,9 @@ img#headshot {
 footer {
   text-align: center;
   color: #3939ef;
+}
+
+.bg1
+{
+
 }
