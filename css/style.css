@@ -3,8 +3,8 @@ body {
 }
 
 .splash-title h1, .splash-title h2 {
-  background-color: #CF6766;
-  font-size: 8em;
+  background-color: none;
+  font-size: 10em;
   font-weight: 800;
   margin: 0;
   /*text-shadow: 2px 2px 8px #000000;*/
@@ -12,11 +12,11 @@ body {
 }
 
 .splash-title h2 {
-  font-size: 3em;
+  font-size: 5em;
   font-weight: 400;
-  color: darksalmon;
-
+  color: white;
 }
+
 
 @keyframes makeVisible {
   0% {
@@ -56,8 +56,13 @@ body {
 }
 
 .splash, .eater-splash {
+    background-image: url(splash_cover.jpg);
+    background-color: #CF6739;
+    background-blend-mode: difference;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
     text-align: center;
-    background-color: #CF6766;
     color: white;
     height: 100vh;
     overflow: hidden;
@@ -65,11 +70,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-shadow: 5px 5px #000000;
 }
 
 .fa {
-  font-size: 50px;
-  color: #30415D;
+  font-size: 100px;
+  color: white;
   margin: 20px;
 }
 
@@ -209,57 +215,5 @@ footer {
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-  .splash {
-    height: 70vh;
-  }
-  .image-cropper {
-    display: none;
-  }
-
-  .index-button{
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    background-color: white;
-    color: #3939ef;
-    width: 400px;
-    margin:20px auto;
-
-    vertical-align: top;
-    height: 60px;
-    padding: 0;
-    font-size: 22px;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    border: 0;
-    border-bottom: 2px solid #80399d;
-    cursor: pointer;
-    -webkit-box-shadow: inset 0 -2px #80399d;
-    box-shadow: inset 0 -2px #80399d;
-
-  }
-
-  .index-button h2 {
-    font-size: 40px;
-    margin: 10px;
-  }
-
-  .index-buttons {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-  }
-
-.index-button:active {
-  top: 1px;
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-  .fa {
-    font-size: 50px;
-    margin: 20px;
-  }
+  
 }
