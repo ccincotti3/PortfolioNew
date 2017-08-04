@@ -21,22 +21,3 @@ $("#hotdog").mouseenter(
   $("#hdvid").css("visibility", "hidden");
 }
 );
-
-
-$("#hotdog").click(function() {
-  $(".splash").hide();
-  $(".navbar").show();
-  $(".eater-splash").show();
-  $(".eater-splash").css(
-    {
-        "display": "flex",
-        "align-items": "center",
-        "flex-direction": "column",
-        "justify-content": "center"
-    })
-});
-
-
-$("#headshot").click(function() {
-  alert( "Handler for headshot called." );
-});

@@ -50,14 +50,33 @@ body {
   }
 }
 
+@keyframes colorWheel {
+  0% {
+    background-color: #CF6739;
+  }
+  25% {
+    background-color: lightgray
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: #CF6739;
+  }
+}
+
 
 .splash-title, .eater-splash-title {
   animation: 1s ease-out 0s 1 makeVisible;
 }
 
 .splash, .eater-splash {
+    animation: colorWheel 30s ease-out infinite;
     background-image: url(splash_cover.jpg);
-    background-color: #CF6739;
+    /*background-color: #CF6739;*/
     background-blend-mode: difference;
     background-repeat:no-repeat;
     background-size: cover;
@@ -73,10 +92,15 @@ body {
     text-shadow: 5px 5px #000000;
 }
 
-.fa {
+.fa-button {
   font-size: 100px;
   color: white;
   margin: 20px;
+  transition: color .2s ease-in;
+}
+
+.fa-button:hover {
+  color: orange
 }
 
 .hide-background {
@@ -101,6 +125,13 @@ body {
 
 .navbar-inverse .navbar-nav>li>a {
   color: white;
+  font-size: 20px;
+  font-weight: 800;
+  transition: color .2s ease-in;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: orange;
   font-size: 20px;
   font-weight: 800;
 }
@@ -149,14 +180,13 @@ body {
 }
 
 .eater-splash {
-  display: none;
-  background-image:
-  linear-gradient( rgba(57,148,239,.5), rgba(57,148,239,.5) ),
-  url('trophy.JPG');
+  background-blend-mode: normal;
+  background-image:  url('trophy.JPG');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  back
 }
 
 .eater-splash-title h1 {
@@ -201,15 +231,46 @@ footer {
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
+  .splash-title h1 {
+    font-size: 7em;
+  }
 
+  .splash-title h2 {
+    font-size: 4em;
+  }
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
+  .navbar{
+    background: gray;
+    position: fixed;
+    outline: none;
+    border: none;
+  }
+
+  .splash {
+    margin-top: 50px;
+  }
+
+  .splash-title h1 {
+    font-size: 7em;
+  }
+
+  .splash-title h2 {
+    font-size: 4em;
+  }
 
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
+  .splash-title h1 {
+    font-size: 5em;
+  }
+
+  .splash-title h2 {
+    font-size: 3em;
+  }
 
 }
