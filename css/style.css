@@ -3,11 +3,18 @@ body {
 }
 
 .splash-title h1, .splash-title h2 {
-  background-color: #3939ef;
-  font-size: 7em;
+  background-color: #CF6766;
+  font-size: 8em;
   font-weight: 800;
   margin: 0;
-  text-shadow: 2px 2px 8px #000000;
+  /*text-shadow: 2px 2px 8px #000000;*/
+
+}
+
+.splash-title h2 {
+  font-size: 3em;
+  font-weight: 400;
+  color: darksalmon;
 
 }
 
@@ -50,24 +57,26 @@ body {
 
 .splash, .eater-splash {
     text-align: center;
-    background-color: #3939ef;
+    background-color: #CF6766;
     color: white;
-    height: 80vh;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .fa {
   font-size: 50px;
-  color: #3939ef;
+  color: #30415D;
   margin: 20px;
 }
 
-.image-cropper {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    outline: none;
+.hide-background {
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .circle {
@@ -78,9 +87,20 @@ body {
 }
 
 .navbar{
-  display: none;
   background: none;
   position: fixed;
+  outline: none;
+  border: none;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: darksalmon;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.nav li a{
+  color: #30415D;
 }
 
 .index-buttons {
@@ -93,11 +113,6 @@ body {
   text-shadow: 2px 2px 8px #000000;
 }
 
-.navbar-brand{
-  color: white;
-  font-weight: 800;
-  font-size: 20px;
-}
 
 .slideInFromBottom {
   animation: 1s ease-out 0s 1 slideInFromBottom;
@@ -114,13 +129,21 @@ body {
   margin: 30px;
   filter: grayscale(100);
   box-shadow: none;
-  transition: all .2s ease-in;
+  z-index: 3;
 }
 
-.index-button button:hover {
-  filter: grayscale(0);
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+.bgvid {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
 }
 
 .eater-splash {
@@ -236,7 +259,7 @@ footer {
 }
 
   .fa {
-    font-size: 35px;
-    margin: 15px;
+    font-size: 50px;
+    margin: 20px;
   }
 }

@@ -1,14 +1,26 @@
 let indexButtons = $("button");
 
-// indexButtons.click(function(){
-//     $( ".splash" ).replaceWith( "<h2>New heading</h2>" );
-//     console.log("clcik");
-// });
+// $(document).ready(function () {
+//   var back = ["#ff0000","blue","gray"];
+//   var rand = back[Math.floor(Math.random() * back.length)];
+//   $('.splash').css('background',rand);
+// })
 
-$(".index-buttons").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
-   function(e) {
-     indexButtons.addClass("upAndDown")
- });
+ $("#code").mouseenter(
+   function() {
+     $("#covid").css("visibility", "visible");
+ }).mouseleave(function() {
+   $("#covid").css("visibility", "hidden");
+ }
+);
+
+$("#hotdog").mouseenter(
+  function() {
+    $("#hdvid").css("visibility", "visible");
+}).mouseleave(function() {
+  $("#hdvid").css("visibility", "hidden");
+}
+);
 
 
 $("#hotdog").click(function() {
