@@ -13,12 +13,12 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav id="eater-bar" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -26,6 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+        <a class="navbar-brand" href="./index.html">CARMEN CINCOTTI</a>
       </div>
 
        <div class="collapse navbar-collapse" id="myNavbar">
@@ -40,11 +41,45 @@
   </nav>
 
     <div class="eater-splash">
-      <div class="row eater-splash-title"><h1>world champion eater</h1></div>
-      <div class="row eater-splash-title"><h2>ranked #2 in the world</h2></div>
+      <div class="row splash-title">
+        <h1>world champion eater</h1>
+        <h2>ranked #2 in the world</h2>
+      </div>
+
+      <div class = "video-nav row">
+         <div class = "col-sm-6 col-md-3">
+            <a href = "#" class = "thumbnail">
+               <img src = "espn.png" alt = "ESPN">
+            </a>
+         </div>
+
+         <div class = "col-sm-6 col-md-3">
+            <a href = "https://www.youtube.com/watch?v=3Qalf_UbaWs" class = "thumbnail">
+               <img src = "nathansfamous.jpg" alt = "Nathan's Famous" target="_blank">
+            </a>
+         </div>
+
+         <div class = "col-sm-6 col-md-3">
+            <a href = "#" class = "thumbnail">
+               <img src = "mlb.png" alt = "MLB">
+            </a>
+         </div>
+
+         <div class = "col-sm-6 col-md-3">
+            <a href = "#" class = "thumbnail">
+               <img src = "chasingnews.png" alt = "Chasing News">
+            </a>
+         </div>
+      </div>
     </div>
 
-    <!-- <footer>
+    <section id="schedule" class="section row">
+      <h1>SCHEDULE</h1>
+      <ul id="events-upcoming"></ul>
+      <ul id="events-past"></ul>
+    </section>
+
+    <footer>
       <div class="social-media-links">
         <i class="fa fa-github" aria-hidden="true"></i>
         <i class="fa fa-linkedin" aria-hidden="true"></i>
@@ -54,7 +89,23 @@
         <i class="fa fa-youtube" aria-hidden="true"></i>
       </div>
       <p>website by carmen, please watch my youtube videos.</p>
-    </footer> -->
+    </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/format-google-calendar.js"></script>
+    <script>
+    formatGoogleCalendar.init({
+      calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/k7irji1r7kqrpgj8qm2ppmt26o@group.calendar.google.com/events?key=AIzaSyAD9RpqHHBEXr5nE0OcBHjKHM-rRSj2ldg',
+      past: false,
+      upcoming: true,
+      pastTopN: -1,
+      upcomingTopN: 3,
+      itemsTagName: 'li',
+      upcomingSelector: '#events-upcoming',
+      pastSelector: '#events-past',
+      upcomingHeading: '<h2>Upcoming events</h2>',
+      pastHeading: '<h2>Past events</h2>',
+      format: ['*date*', ': ', '*summary*', ' — ', '*description*', ' in ', '*location*']
+    });
+    </script>
   </body>
 </html>

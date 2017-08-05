@@ -6,16 +6,17 @@ body {
   background: none;
   font-size: 10em;
   font-weight: 800;
-  margin: 0;
+  margin-bottom: 20px;
   /*text-shadow: 2px 2px 8px #000000;*/
 
 }
 
 .splash-title h2 {
-  font-size: 5em;
-  font-weight: 400;
+  font-size: 3em;
+  font-weight: 200;
   color: white;
 }
+
 
 
 @keyframes makeVisible {
@@ -71,11 +72,14 @@ body {
 
 .splash-title, .eater-splash-title {
   animation: 1s ease-out 0s 1 makeVisible;
+  border: white 12px solid;
+  padding: 20px;
+  margin-bottom: 50px;
 }
 
 .splash, .eater-splash {
-    animation: colorWheel 30s ease-out infinite;
-    background-image: url(splash_cover.jpg);
+    /*animation: colorWheel 30s ease-out infinite;*/
+    background-image: url(splash_cover1.jpg);
     /*background-color: #CF6739;*/
     background-blend-mode: difference;
     background-repeat:no-repeat;
@@ -89,7 +93,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-shadow: 5px 5px #000000;
 }
 
 .fa-button {
@@ -181,12 +184,12 @@ body {
 
 .eater-splash {
   background-blend-mode: normal;
-  background-image:  url('trophy.JPG');
+  background-image:  url('trophy1.JPG');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  back
+  height: 800px;
 }
 
 .eater-splash-title h1 {
@@ -212,6 +215,44 @@ img#hotdog {
 img#headshot {
   position:relative;
   right: 5px;
+}
+
+section {
+  height: 700px;
+  text-align: center;
+}
+
+section h1 {
+  font-size: 90px;
+  font-weight: 200;
+  color: white;
+  margin-bottom: 35px;
+}
+
+#schedule {
+  background-image: url(cyclone1.jpg);
+}
+
+#press {
+}
+
+#eater-bar {
+  background-color: transparent;
+  transition: background-color 1s ease-in;
+}
+
+.flex {
+  display: flex;
+}
+
+.thumbnail {
+  height: 150px;
+  width: 240px;
+}
+
+.thumbnail img {
+  height: 100%;
+  width: 100%;
 }
 
 footer {
