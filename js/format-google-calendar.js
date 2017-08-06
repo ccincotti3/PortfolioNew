@@ -149,23 +149,30 @@ var formatGoogleCalendar = (function() {
             description = result.description || '',
             location = result.location || '',
             i;
+        var attachment;
+        if (result.attachments) {
+          attachment = result.attachments[0].fileUrl || '';
+        }
 
         for (i = 0; i < format.length; i++) {
 
             format[i] = format[i].toString();
-
-            if (format[i] === '*summary*') {
+              if (format[i] === '*image*') {
+              output = output.concat('<img src=' + `'${attachment}'` + '>')
+              console.log(output)
+            } else if (format[i] === '*summary*') {
                 output = output.concat('<span class="summary">' + summary + '</span>');
             } else if (format[i] === '*date*') {
-                output = output.concat('<p class="date">' + dateFormatted + '</p>');
+                output = output.concat('<span class="date">' + dateFormatted + ': ' + '</span>');
             } else if (format[i] === '*description*') {
                 output = output.concat('<span class="description">' + description + '</span>');
             } else if (format[i] === '*location*') {
-                output = output.concat('<span class="location">' + location + '</span>' + '<br>');
+                output = output.concat('<span class="location">' + location + '</span>' + '<br></br>');
             } else {
                 if ((format[i + 1] === '*location*' && location !== '') ||
                     (format[i + 1] === '*summary*' && summary !== '') ||
                     (format[i + 1] === '*date*' && dateFormatted !== '') ||
+                    (format[i + 1] === '*image*' && dateFormatted !== '') ||
                     (format[i + 1] === '*description*' && description !== '')) {
 
                     output = output.concat(format[i]);
@@ -197,7 +204,7 @@ var formatGoogleCalendar = (function() {
     //Get month name according to index
     var getMonthName = function (month) {
         var monthNames = [
-            'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+            'Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
         ];
 
         return monthNames[month];
@@ -250,7 +257,8 @@ var formatGoogleCalendar = (function() {
         }
 
         if (config.sameDayTimes && !moreDaysEvent && !isAllDayEvent) {
-            formattedTime = ' from ' + getFormattedTime(dateStart) + ' - ' + getFormattedTime(dateEnd);
+            formattedTime = ' - ' + getFormattedTime(dateStart)
+            //  + ' - ' + getFormattedTime(dateEnd);
         }
 
         //month day, year time-time

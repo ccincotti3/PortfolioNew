@@ -24,6 +24,10 @@ font-weight: 800;
 
 }
 
+.carousel-inner img {
+  margin: auto;
+}
+
 
 
 @keyframes makeVisible {
@@ -274,8 +278,12 @@ img#headshot {
 
 section {
   padding: 50px;
-  height: 600px;
+  height: auto;
   text-align: center;
+}
+
+.carousel {
+  max-height: 800px;
 }
 
 section h1 {
