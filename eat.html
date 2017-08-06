@@ -13,7 +13,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -41,37 +41,43 @@
   </nav>
 
     <div class="eater-splash">
-      <div class="row splash-title">
-        <h1>world champion eater</h1>
+      <div class="row eater-splash-title">
+        <div class="image-cropper">
+          <img id="eater" src="nathans.JPG" />
+        </div>
+        <h1>i'm a pro eater</h1>
         <h2>ranked #2 in the world</h2>
       </div>
+    </div>
 
+    <section id="press">
+      <h1>MY FAVORITE VIDEOS</h1>
       <div class = "video-nav row">
          <div class = "col-sm-6 col-md-3">
-            <a href = "#" class = "thumbnail">
+            <button class="video-button" data-toggle="modal" data-target="#espn-modal">
                <img src = "espn.png" alt = "ESPN">
-            </a>
+            </button>
          </div>
 
          <div class = "col-sm-6 col-md-3">
-            <a href = "https://www.youtube.com/watch?v=3Qalf_UbaWs" class = "thumbnail">
-               <img src = "nathansfamous.jpg" alt = "Nathan's Famous" target="_blank">
-            </a>
+            <button data-toggle="modal" data-target="#nathans-modal" class = "video-button">
+               <img src = "nathans.png" alt = "Nathan's Famous" target="_blank">
+            </button>
          </div>
 
          <div class = "col-sm-6 col-md-3">
-            <a href = "#" class = "thumbnail">
+            <button data-toggle="modal" data-target="#mlb-modal" class = "video-button">
                <img src = "mlb.png" alt = "MLB">
-            </a>
+            </button>
          </div>
 
          <div class = "col-sm-6 col-md-3">
-            <a href = "#" class = "thumbnail">
-               <img src = "chasingnews.png" alt = "Chasing News">
-            </a>
+            <button data-toggle="modal" data-target="#wp-modal" class = "video-button">
+               <img src = "wp.png" alt = "Washington Post">
+            </button>
          </div>
       </div>
-    </div>
+    </section>
 
     <section id="schedule" class="section row">
       <h1>SCHEDULE</h1>
@@ -102,10 +108,92 @@
       itemsTagName: 'li',
       upcomingSelector: '#events-upcoming',
       pastSelector: '#events-past',
-      upcomingHeading: '<h2>Upcoming events</h2>',
+      upcomingHeading: '',
       pastHeading: '<h2>Past events</h2>',
-      format: ['*date*', ': ', '*summary*', ' — ', '*description*', ' in ', '*location*']
+      format: ['*date*', '*summary*', ' — ', '*description*', ' in ', '*location*']
     });
     </script>
+
+    <div id="espn-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Nathan's 2017 Hot Dog Eating Contest on ESPN</h4>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" height="315" src="http://www.espn.com/core/video/iframe?id=19809362&endcard=false" allowfullscreen frameborder="0"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+      <div id="nathans-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Nathan's Famous Media</h4>
+          </div>
+          <div class="modal-body">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/3Qalf_UbaWs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mlb-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">MLB All Star Weekend</h4>
+        </div>
+        <div class="modal-body">
+          <video controls width="100%" name="media" class="vsc-initialized" data-vscid="gxd54nkke"><source src="http://mediadownloads.mlb.com/mlbam/mp4/2017/07/09/1589296183/1499573005164/asset_450K.mp4" type="video/mp4"></video>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+    <div id="wp-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">2017 Peeps Championship</h4>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwashingtonpost%2Fvideos%2F10154973939267293%2F&width=500&show_text=false&height=281&appId" width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+
   </body>
 </html>

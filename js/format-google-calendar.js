@@ -157,11 +157,11 @@ var formatGoogleCalendar = (function() {
             if (format[i] === '*summary*') {
                 output = output.concat('<span class="summary">' + summary + '</span>');
             } else if (format[i] === '*date*') {
-                output = output.concat('<span class="date">' + dateFormatted + '</span>');
+                output = output.concat('<p class="date">' + dateFormatted + '</p>');
             } else if (format[i] === '*description*') {
                 output = output.concat('<span class="description">' + description + '</span>');
             } else if (format[i] === '*location*') {
-                output = output.concat('<span class="location">' + location + '</span>');
+                output = output.concat('<span class="location">' + location + '</span>' + '<br>');
             } else {
                 if ((format[i + 1] === '*location*' && location !== '') ||
                     (format[i + 1] === '*summary*' && summary !== '') ||
